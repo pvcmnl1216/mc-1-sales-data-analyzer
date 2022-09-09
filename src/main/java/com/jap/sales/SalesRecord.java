@@ -98,4 +98,16 @@ public class SalesRecord {
 
     // Override the toString method
 
+    @Override
+    public String toString() {
+        return "SalesRecord{" +
+                "date='" + date + '\'' +
+                ", customerId=" + customerId +
+                ", productCategory=" + productCategory +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", amount=" + amount +
+                ", timeOnSite=" + timeOnSite +
+                ", clicksInSite=" + clicksInSite +
+                '}';
+    }
 }
