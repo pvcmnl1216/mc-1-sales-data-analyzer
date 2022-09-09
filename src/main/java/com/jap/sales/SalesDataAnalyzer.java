@@ -16,7 +16,7 @@ public class SalesDataAnalyzer {
             FileReader fis = new FileReader(fileName);
             BufferedReader bufferedReader = new BufferedReader(fis);
             String line = bufferedReader.readLine();
-            while ((line = bufferedReader.readLine()) != null {
+            while ((line = bufferedReader.readLine()) != null) {
                 String[] split = line.split(",");
                 String date = split[0];
                 int customerID = Integer.parseInt(split[1]);
@@ -38,6 +38,7 @@ public class SalesDataAnalyzer {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return salesRecordList;
     }
 
     public List<SalesRecord> getAllCustomersSortedByPurchaseAmount(List<SalesRecord> salesData, AmountComparator amountComparator) {
