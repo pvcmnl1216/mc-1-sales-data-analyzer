@@ -1,6 +1,8 @@
 package com.jap.sales;
 
 
+import java.util.Objects;
+
 public class SalesRecord {
     private String date;
     private int customerId;
@@ -81,9 +83,19 @@ public class SalesRecord {
 
     // Override the equals() and the hashCode() methods
 
-    // Override the toString method
     @Override
-    public String toString() {
-        return "";
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SalesRecord that = (SalesRecord) o;
+        return customerId == that.customerId && productCategory == that.productCategory && Double.compare(that.amount, amount) == 0 && Double.compare(that.timeOnSite, timeOnSite) == 0 && clicksInSite == that.clicksInSite && Objects.equals(date, that.date) && Objects.equals(paymentMethod, that.paymentMethod);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(date, customerId, productCategory, paymentMethod, amount, timeOnSite, clicksInSite);
+    }
+
+    // Override the toString method
+
 }
